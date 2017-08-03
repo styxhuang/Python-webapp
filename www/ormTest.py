@@ -10,14 +10,14 @@ import orm
 from orm import Model,StringField,IntegerField
 
 class User(Model):
-	__table__ = 'users'
+	__table__ = 'user'
 	id = IntegerField(primary_key=True)
 	name = StringField()
 
 async def connecDB(loop):
-	username = 'huanghunhm'
-	password = '3631483_hM'
-	dbname = 'localhost'
+	username = 'root' 
+	password = '123qwe'
+	dbname = 'test'
 	await orm.create_pool(loop,user=username,password=password,db=dbname)
 
 async def destoryDB():
