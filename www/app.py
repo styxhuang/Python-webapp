@@ -44,7 +44,7 @@ from jinja2 import Environment, FileSystemLoader
 import orm
 from coroweb import add_routes, add_static
 
-def init_jinja2(app, **kw):
+def init_jinja2(app, **kw): #jinja2 强大的 HTML 自动转义系统保护系统免受 XSS
     logging.info('init jinja2...')
     options = dict(
         autoescape = kw.get('autoescape', True),
